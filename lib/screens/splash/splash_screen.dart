@@ -49,16 +49,14 @@ class SplashScreenState extends State<SplashScreen> {
   }
 
   void navigateToMain() async {
-    await Future.delayed(const Duration(seconds: 4));
-
     final prefs = await SharedPreferences.getInstance();
-    bool isOnboardingSeen = prefs.getBool('isOnboardingSeen') ?? false;
+    bool onboardingSeen = prefs.getBool('onboarding_seen') ?? false;
+    String nextRoute =
+        onboardingSeen ? Routes.mainRoute : Routes.onBoardingRoute;
 
-    if (!mounted) return;
-    if (isOnboardingSeen) {
-      Navigator.pushReplacementNamed(context, Routes.mainRoute);
-    } else {
-      Navigator.pushReplacementNamed(context, Routes.onBoardingRoute);
-    }
+    Future.delayed(const Duration(seconds: 4), () {
+      if (!mounted) return;
+      Navigator.pushReplacementNamed(context, nextRoute);
+    });
   }
 }

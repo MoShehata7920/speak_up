@@ -66,13 +66,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TextButton(
-                  onPressed: () => _goToMainScreen(),
+                  onPressed: () => completeOnboarding(context),
                   child: const Text(AppStrings.skip),
                 ),
                 ElevatedButton(
                   onPressed: () {
                     if (isLastPage) {
-                      _goToMainScreen();
+                      completeOnboarding(context);
                     } else {
                       _controller.nextPage(
                         duration: const Duration(milliseconds: 500),
@@ -92,10 +92,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     );
   }
 
-  void _goToMainScreen() async {
+  Future<void> completeOnboarding(BuildContext context) async {
     final prefs = await SharedPreferences.getInstance();
-    prefs.setBool('onboardingCompleted', true);
-    if (!mounted) return;
+    await prefs.setBool('onboarding_seen', true);
+
+    if (!context.mounted) return;
     Navigator.pushReplacementNamed(context, Routes.mainRoute);
   }
 }
