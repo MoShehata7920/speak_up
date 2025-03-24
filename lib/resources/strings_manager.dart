@@ -7,4 +7,6 @@ class AppStrings {
   static const String developedBy = "Developed By";
   static const String mohamedShehata = "Mohamed Shehata Torky";
 
+  // Splash Screen
+  static const String welcomeTpSpeakUp = "Welcome to Speak Up!";
 }
