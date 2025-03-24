@@ -1,6 +1,9 @@
 import 'dart:async';
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 import 'package:speak_up/resources/routes_manager.dart';
 import 'package:speak_up/resources/strings_manager.dart';
 
@@ -45,10 +48,17 @@ class SplashScreenState extends State<SplashScreen> {
     );
   }
 
-  void navigateToMain() {
-    Future.delayed(const Duration(seconds: 4), () {
-      if (!mounted) return;
+  void navigateToMain() async {
+    await Future.delayed(const Duration(seconds: 4));
+
+    final prefs = await SharedPreferences.getInstance();
+    bool isOnboardingSeen = prefs.getBool('isOnboardingSeen') ?? false;
+
+    if (!mounted) return;
+    if (isOnboardingSeen) {
       Navigator.pushReplacementNamed(context, Routes.mainRoute);
-    });
+    } else {
+      Navigator.pushReplacementNamed(context, Routes.onBoardingRoute);
+    }
   }
 }
