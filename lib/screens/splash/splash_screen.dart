@@ -52,7 +52,7 @@ class SplashScreenState extends State<SplashScreen> {
     final prefs = await SharedPreferences.getInstance();
     bool onboardingSeen = prefs.getBool('onboarding_seen') ?? false;
     String nextRoute =
-        onboardingSeen ? Routes.mainRoute : Routes.onBoardingRoute;
+        onboardingSeen ? Routes.logInRoute : Routes.onBoardingRoute;
 
     Future.delayed(const Duration(seconds: 4), () {
       if (!mounted) return;
