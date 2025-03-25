@@ -52,9 +52,9 @@ class SplashScreenState extends State<SplashScreen> {
     final prefs = await SharedPreferences.getInstance();
     bool onboardingSeen = prefs.getBool('onboarding_seen') ?? false;
     String nextRoute =
-        onboardingSeen ? Routes.logInRoute : Routes.onBoardingRoute;
+        onboardingSeen ? Routes.navBarRoute : Routes.onBoardingRoute;
 
-    Future.delayed(const Duration(seconds: 4), () {
+    Future.delayed(const Duration(seconds: 3), () {
       if (!mounted) return;
       Navigator.pushReplacementNamed(context, nextRoute);
     });

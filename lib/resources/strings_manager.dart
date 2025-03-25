@@ -42,4 +42,10 @@ class AppStrings {
   static const String sendResetLink = "Send Reset Link";
   static const String backToLogin = "Back to Login";
   static const String fullName = "Full Name";
+
+  // Nav Bar
+  static const String home = "Home";
+  static const String conversations = "Conversations";
+  static const String aiChat = "AI Chat";
+  static const String settings = "Settings";
 }
