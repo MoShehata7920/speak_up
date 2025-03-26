@@ -61,4 +61,6 @@ class AppStrings {
   static const String streak = "🔥 Streak:";
   static const String days = "Days";
   static const String completed = "Completed";
+  static const String aiConversation = "AI Conversation";
+  static const String typeAMessage = "Type a message...";
 }

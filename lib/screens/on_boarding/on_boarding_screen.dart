@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:speak_up/manager/onboarding/on_boarding_cubit.dart';
 import 'package:speak_up/resources/assets_manager.dart';
 import 'package:speak_up/resources/routes_manager.dart';
 import 'package:speak_up/resources/strings_manager.dart';
 import 'package:speak_up/screens/on_boarding/on_boarding_page.dart';
 import 'package:speak_up/service/utils.dart';
 
-class OnboardingScreen extends StatefulWidget {
+class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
 
   @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState();
-}
-
-class _OnboardingScreenState extends State<OnboardingScreen> {
-  final PageController _controller = PageController();
-  bool isLastPage = false;
-
-  @override
   Widget build(BuildContext context) {
+    final PageController controller = PageController();
     Size size = Utils(context).screenSize;
 
     return Scaffold(
@@ -29,10 +24,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           children: [
             Expanded(
               child: PageView(
-                controller: _controller,
-                onPageChanged: (index) {
-                  setState(() => isLastPage = index == 2);
-                },
+                controller: controller,
+                onPageChanged:
+                    (index) =>
+                        context.read<OnboardingCubit>().updatePage(index),
                 children: const [
                   OnboardingPage(
                     animation: AppJson.onBoarding1,
@@ -53,38 +48,44 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
             SmoothPageIndicator(
-              controller: _controller,
+              controller: controller,
               count: 3,
-              effect: ExpandingDotsEffect(
+              effect: const ExpandingDotsEffect(
                 activeDotColor: Colors.blue,
                 dotHeight: 8,
                 dotWidth: 8,
               ),
             ),
             SizedBox(height: size.height * 0.03),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () => completeOnboarding(context),
-                  child: const Text(AppStrings.skip),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    if (isLastPage) {
-                      completeOnboarding(context);
-                    } else {
-                      _controller.nextPage(
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.ease,
-                      );
-                    }
-                  },
-                  child: Text(
-                    isLastPage ? AppStrings.getStarted : AppStrings.next,
-                  ),
-                ),
-              ],
+            BlocBuilder<OnboardingCubit, int>(
+              builder: (context, currentIndex) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextButton(
+                      onPressed: () => completeOnboarding(context),
+                      child: const Text(AppStrings.skip),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        if (context.read<OnboardingCubit>().isLastPage()) {
+                          completeOnboarding(context);
+                        } else {
+                          controller.nextPage(
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.ease,
+                          );
+                        }
+                      },
+                      child: Text(
+                        context.read<OnboardingCubit>().isLastPage()
+                            ? AppStrings.getStarted
+                            : AppStrings.next,
+                      ),
+                    ),
+                  ],
+                );
+              },
             ),
           ],
         ),

@@ -10,4 +10,5 @@ class AppJson {
   static const String onBoarding1 = "$jsonPath/onboarding1.json";
   static const String onBoarding2 = "$jsonPath/onboarding2.json";
   static const String onBoarding3 = "$jsonPath/onboarding3.json";
+  static const String typingIndicator = "$jsonPath/typingIndicator.json";
 }

@@ -12,4 +12,6 @@ class AppIcons {
   static const settings = IconlyBroken.setting;
   static const light = Icons.lightbulb;
   static const volumeUp = Icons.volume_up;
+  static const send = IconlyBroken.send;
+  static const mic = Icons.mic;
 }
