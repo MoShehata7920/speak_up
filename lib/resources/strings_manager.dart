@@ -52,7 +52,8 @@ class AppStrings {
   // Home Screen
   static const String welcome = "Welcome back,";
   static const String talkToAI = "Talk to AI";
-  static const String improveYourSkills = "Improve your skills with AI conversations.";
+  static const String improveYourSkills =
+      "Improve your skills with AI conversations.";
   static const String startChat = "Start Chat";
   static const String wordOfTheDay = "Word of the Day";
   static const String conversationPractice = "Practice Conversations";
@@ -63,4 +64,7 @@ class AppStrings {
   static const String completed = "Completed";
   static const String aiConversation = "AI Conversation";
   static const String typeAMessage = "Type a message...";
+
+  // Ai Chat Screen
+  static const String askAiAnything = "Ask AI anything...";
 }

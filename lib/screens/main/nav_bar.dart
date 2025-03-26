@@ -17,7 +17,7 @@ class BottomNavBar extends StatelessWidget {
     final List<Widget> screens = [
       const HomeScreen(),
       const ConversationScreen(),
-      const AIChatScreen(),
+       AiChatScreen(),
       const SettingsScreen(),
     ];
 

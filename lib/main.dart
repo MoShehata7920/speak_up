@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:speak_up/manager/ai_chat/ai_chat_cubit.dart';
 import 'package:speak_up/manager/bottom_nav/bottom_nav_cubit.dart';
 import 'package:speak_up/manager/conversation/conversation_cubit.dart';
 import 'package:speak_up/manager/onboarding/on_boarding_cubit.dart';
@@ -14,6 +15,7 @@ void main() {
         BlocProvider(create: (context) => BottomNavCubit()),
         BlocProvider(create: (context) => ConversationCubit()),
         BlocProvider(create: (context) => OnboardingCubit()),
+        BlocProvider(create: (context) => AiChatCubit()),
       ],
       child: const MyApp(),
     ),

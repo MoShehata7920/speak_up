@@ -14,4 +14,5 @@ class AppIcons {
   static const volumeUp = Icons.volume_up;
   static const send = IconlyBroken.send;
   static const mic = Icons.mic;
+  static const regenerate = Icons.replay;
 }
