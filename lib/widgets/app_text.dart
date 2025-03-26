@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppText extends StatelessWidget {
   final String text;
@@ -10,6 +11,8 @@ class AppText extends StatelessWidget {
   final double letterSpacing;
   final bool softWrap;
   final double? height;
+  final Color? color;
+
   const AppText({
     super.key,
     required this.text,
@@ -21,17 +24,19 @@ class AppText extends StatelessWidget {
     this.letterSpacing = 0,
     this.softWrap = true,
     this.height,
+    this.color,
   });
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
+      style: GoogleFonts.poppins(
         fontSize: fontSize,
         fontWeight: fontWeight,
         letterSpacing: letterSpacing,
         height: height ?? 0,
+        color: color ?? Colors.black,
       ),
       textAlign: textAlign,
       overflow: overflow,

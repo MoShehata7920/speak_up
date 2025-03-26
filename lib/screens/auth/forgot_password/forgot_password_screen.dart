@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:speak_up/resources/assets_manager.dart';
 import 'package:speak_up/resources/strings_manager.dart';
+import 'package:speak_up/widgets/app_text.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
@@ -28,17 +28,16 @@ class ForgotPasswordScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: size.height * 0.1),
-            Text(
-              AppStrings.forgotPassword,
-              style: GoogleFonts.poppins(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-              ),
+            AppText(
+              text: AppStrings.forgotPassword,
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
             ),
+
             SizedBox(height: size.height * 0.01),
-            Text(
-              AppStrings.enterYourEmailToResetPassword,
-              style: GoogleFonts.poppins(fontSize: 16, color: Colors.grey),
+            AppText(
+              text: AppStrings.enterYourEmailToResetPassword,
+              color: Colors.grey,
             ),
             SizedBox(height: size.height * 0.04),
             _buildTextField(label: AppStrings.email),

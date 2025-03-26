@@ -48,4 +48,17 @@ class AppStrings {
   static const String conversations = "Conversations";
   static const String aiChat = "AI Chat";
   static const String settings = "Settings";
+
+  // Home Screen
+  static const String welcome = "Welcome back,";
+  static const String talkToAI = "Talk to AI";
+  static const String improveYourSkills = "Improve your skills with AI conversations.";
+  static const String startChat = "Start Chat";
+  static const String wordOfTheDay = "Word of the Day";
+  static const String conversationPractice = "Practice Conversations";
+  static const String start = "Start";
+  static const String yourProgress = "Your Progress";
+  static const String streak = "🔥 Streak:";
+  static const String days = "Days";
+  static const String completed = "Completed";
 }

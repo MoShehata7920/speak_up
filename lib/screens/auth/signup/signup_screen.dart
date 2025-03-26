@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:speak_up/resources/assets_manager.dart';
 import 'package:speak_up/resources/strings_manager.dart';
+import 'package:speak_up/widgets/app_text.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -28,18 +28,14 @@ class SignUpScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: size.height * 0.1),
-            Text(
-              AppStrings.createAccount,
-              style: GoogleFonts.poppins(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-              ),
+            AppText(
+              text: AppStrings.createAccount,
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
             ),
+
             SizedBox(height: size.height * 0.01),
-            Text(
-              AppStrings.signUpToContinue,
-              style: GoogleFonts.poppins(fontSize: 16, color: Colors.grey),
-            ),
+            AppText(text: AppStrings.signUpToContinue, color: Colors.grey),
             SizedBox(height: size.height * 0.04),
             _buildTextField(label: AppStrings.fullName),
             SizedBox(height: size.height * 0.02),

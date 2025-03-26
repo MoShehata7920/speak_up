@@ -97,6 +97,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     await prefs.setBool('onboarding_seen', true);
 
     if (!context.mounted) return;
-    Navigator.pushReplacementNamed(context, Routes.mainRoute);
+    Navigator.pushReplacementNamed(context, Routes.logInRoute);
   }
 }

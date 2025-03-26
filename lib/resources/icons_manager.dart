@@ -10,4 +10,6 @@ class AppIcons {
   static const conversations = IconlyBroken.chat;
   static const aiChat = Icons.smart_toy_outlined;
   static const settings = IconlyBroken.setting;
+  static const light = Icons.lightbulb;
+  static const volumeUp = Icons.volume_up;
 }

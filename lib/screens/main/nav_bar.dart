@@ -6,7 +6,7 @@ import 'package:speak_up/resources/icons_manager.dart';
 import 'package:speak_up/resources/strings_manager.dart';
 import 'package:speak_up/screens/ai_chat/ai_chat_screen.dart';
 import 'package:speak_up/screens/conversation/conversation_screen.dart';
-import 'package:speak_up/screens/home/main_screen.dart';
+import 'package:speak_up/screens/home/home_screen.dart';
 import 'package:speak_up/screens/settings/settings_screen.dart';
 
 class BottomNavBar extends StatelessWidget {

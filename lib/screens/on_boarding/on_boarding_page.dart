@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:speak_up/service/utils.dart';
+import 'package:speak_up/widgets/app_text.dart';
 
 class OnboardingPage extends StatelessWidget {
   final String animation;
@@ -23,16 +24,9 @@ class OnboardingPage extends StatelessWidget {
       children: [
         Lottie.asset(animation, height: size.height * 0.35),
         SizedBox(height: size.height * 0.03),
-        Text(
-          title,
-          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
+        AppText(text: title, fontSize: 24, fontWeight: FontWeight.bold),
         SizedBox(height: size.height * 0.015),
-        Text(
-          description,
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 16),
-        ),
+        AppText(text: description, textAlign: TextAlign.center),
       ],
     );
   }
