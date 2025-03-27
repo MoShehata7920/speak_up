@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -28,21 +29,21 @@ class OnboardingScreen extends StatelessWidget {
                 onPageChanged:
                     (index) =>
                         context.read<OnboardingCubit>().updatePage(index),
-                children: const [
+                children:  [
                   OnboardingPage(
                     animation: AppJson.onBoarding1,
-                    title: AppStrings.learnLanguagesEasy,
-                    description: AppStrings.practiceConversations,
+                    title: AppStrings.learnLanguagesEasy.tr(),
+                    description: AppStrings.practiceConversations.tr(),
                   ),
                   OnboardingPage(
                     animation: AppJson.onBoarding2,
-                    title: AppStrings.aiPoweredConversations,
-                    description: AppStrings.engageInRealLife,
+                    title: AppStrings.aiPoweredConversations.tr(),
+                    description: AppStrings.engageInRealLife.tr(),
                   ),
                   OnboardingPage(
                     animation: AppJson.onBoarding3,
-                    title: AppStrings.speakWithConfidence,
-                    description: AppStrings.getInstantFeedback,
+                    title: AppStrings.speakWithConfidence.tr(),
+                    description: AppStrings.getInstantFeedback.tr(),
                   ),
                 ],
               ),
@@ -64,7 +65,7 @@ class OnboardingScreen extends StatelessWidget {
                   children: [
                     TextButton(
                       onPressed: () => completeOnboarding(context),
-                      child: const Text(AppStrings.skip),
+                      child: Text(AppStrings.skip.tr()),
                     ),
                     ElevatedButton(
                       onPressed: () {
@@ -79,8 +80,8 @@ class OnboardingScreen extends StatelessWidget {
                       },
                       child: Text(
                         context.read<OnboardingCubit>().isLastPage()
-                            ? AppStrings.getStarted
-                            : AppStrings.next,
+                            ? AppStrings.getStarted.tr()
+                            : AppStrings.next.tr(),
                       ),
                     ),
                   ],

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:speak_up/resources/assets_manager.dart';
@@ -15,7 +16,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: AppText(
-          text: "${AppStrings.welcome} Torky!",
+          text: "${AppStrings.welcome.tr()} Torky!",
           fontSize: 20,
           fontWeight: FontWeight.bold,
         ),
@@ -61,19 +62,19 @@ class HomeScreen extends StatelessWidget {
           children: [
             Lottie.asset(AppJson.onBoarding2, height: size.height * 0.1),
             AppText(
-              text: AppStrings.talkToAI,
+              text: AppStrings.talkToAI.tr(),
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
             AppText(
-              text: AppStrings.improveYourSkills,
+              text: AppStrings.improveYourSkills.tr(),
               textAlign: TextAlign.center,
               fontSize: 14,
               color: Colors.grey,
             ),
             ElevatedButton(
               onPressed: () {},
-              child: const Text(AppStrings.startChat),
+              child: Text(AppStrings.startChat.tr()),
             ),
           ],
         ),
@@ -88,7 +89,7 @@ class HomeScreen extends StatelessWidget {
       child: ListTile(
         leading: const Icon(AppIcons.light, color: Colors.orange, size: 30),
         title: AppText(
-          text: AppStrings.wordOfTheDay,
+          text: AppStrings.wordOfTheDay.tr(),
           fontWeight: FontWeight.bold,
         ),
         subtitle: AppText(
@@ -116,7 +117,7 @@ class HomeScreen extends StatelessWidget {
               size: 30,
             ),
             title: AppText(
-              text: AppStrings.conversationPractice,
+              text: AppStrings.conversationPractice.tr(),
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -135,7 +136,7 @@ class HomeScreen extends StatelessWidget {
       subtitle: AppText(text: language, color: Colors.grey),
       trailing: ElevatedButton(
         onPressed: () {},
-        child: const Text(AppStrings.start),
+        child: Text(AppStrings.start.tr()),
       ),
     );
   }
@@ -149,17 +150,20 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             AppText(
-              text: AppStrings.yourProgress,
+              text: AppStrings.yourProgress.tr(),
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
             AppText(
-              text: "${AppStrings.streak} 5 ${AppStrings.days}",
+              text: "${AppStrings.streak.tr()} 5 ${AppStrings.days.tr()}",
               fontSize: 16,
               color: Colors.redAccent,
             ),
             LinearProgressIndicator(value: 0.6),
-            AppText(text: "60% ${AppStrings.completed}", color: Colors.grey),
+            AppText(
+              text: "60% ${AppStrings.completed.tr()}",
+              color: Colors.grey,
+            ),
           ],
         ),
       ),

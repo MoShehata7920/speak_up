@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:speak_up/resources/assets_manager.dart';
 import 'package:speak_up/resources/routes_manager.dart';
@@ -29,33 +30,36 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: size.height * 0.06),
-            AppText(text: AppStrings.welcomeBack,fontSize: 28,
-                fontWeight: FontWeight.bold,),
+            AppText(
+              text: AppStrings.welcomeBack.tr(),
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+            ),
             SizedBox(height: size.height * 0.01),
-            AppText(text: AppStrings.loginToContinue, color: Colors.grey),
+            AppText(text: AppStrings.loginToContinue.tr(), color: Colors.grey),
             SizedBox(height: size.height * 0.04),
-            _buildTextField(label: AppStrings.email),
+            _buildTextField(label: AppStrings.email.tr()),
             SizedBox(height: size.height * 0.02),
-            _buildTextField(label: AppStrings.password, isPassword: true),
+            _buildTextField(label: AppStrings.password.tr(), isPassword: true),
             Align(
               alignment: Alignment.centerRight,
               child: TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, Routes.forgotPasswordRoute);
                 },
-                child: const Text(AppStrings.forgotPassword),
+                child: Text(AppStrings.forgotPassword.tr()),
               ),
             ),
             SizedBox(height: size.height * 0.04),
             ElevatedButton(
               onPressed: () {},
-              child: const Text(AppStrings.login),
+              child: Text(AppStrings.login.tr()),
             ),
             TextButton(
               onPressed: () {
                 Navigator.pushNamed(context, Routes.signUpRoute);
               },
-              child: const Text(AppStrings.dontHaveAccount),
+              child: Text(AppStrings.dontHaveAccount.tr()),
             ),
           ],
         ),

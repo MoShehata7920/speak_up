@@ -1,13 +1,15 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lottie/lottie.dart';
+
 import 'package:speak_up/manager/ai_chat/ai_chat_cubit.dart';
 import 'package:speak_up/manager/ai_chat/ai_chat_state.dart';
 import 'package:speak_up/models/chat_message_model.dart';
-import 'package:speak_up/resources/strings_manager.dart';
-import 'package:speak_up/widgets/app_text.dart';
-import 'package:lottie/lottie.dart';
 import 'package:speak_up/resources/assets_manager.dart';
 import 'package:speak_up/resources/icons_manager.dart';
+import 'package:speak_up/resources/strings_manager.dart';
+import 'package:speak_up/widgets/app_text.dart';
 
 class AiChatScreen extends StatelessWidget {
   AiChatScreen({super.key});
@@ -19,27 +21,30 @@ class AiChatScreen extends StatelessWidget {
       create: (_) => AiChatCubit(),
       child: Scaffold(
         appBar: AppBar(
-          title: const AppText(
-            text: AppStrings.aiChat,
+          title: AppText(
+            text: AppStrings.aiChat.tr(),
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
         body: Column(
           children: [
-            Expanded(child: BlocBuilder<AiChatCubit, AiChatState>(
-              builder: (context, state) {
-                final messages = state is AiChatMessageUpdated ? state.messages : [];
+            Expanded(
+              child: BlocBuilder<AiChatCubit, AiChatState>(
+                builder: (context, state) {
+                  final messages =
+                      state is AiChatMessageUpdated ? state.messages : [];
 
-                return ListView.builder(
-                  padding: const EdgeInsets.all(10),
-                  itemCount: messages.length,
-                  itemBuilder: (context, index) {
-                    return _buildMessageBubble(context, messages[index]);
-                  },
-                );
-              },
-            )),
+                  return ListView.builder(
+                    padding: const EdgeInsets.all(10),
+                    itemCount: messages.length,
+                    itemBuilder: (context, index) {
+                      return _buildMessageBubble(context, messages[index]);
+                    },
+                  );
+                },
+              ),
+            ),
             BlocBuilder<AiChatCubit, AiChatState>(
               builder: (context, state) {
                 if (state is AiChatTyping) {
@@ -88,7 +93,7 @@ class AiChatScreen extends StatelessWidget {
             child: TextField(
               controller: messageController,
               decoration: InputDecoration(
-                hintText: AppStrings.askAiAnything,
+                hintText: AppStrings.askAiAnything.tr(),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:speak_up/resources/strings_manager.dart';
 import 'package:speak_up/screens/auth/forgot_password/forgot_password_screen.dart';
@@ -50,8 +51,8 @@ class RouteGenerator {
     return MaterialPageRoute(
       builder:
           (context) => Scaffold(
-            appBar: AppBar(title: const Text(AppStrings.noRouteTitle)),
-            body: const Center(child: Text(AppStrings.noRouteFound)),
+            appBar: AppBar(title: Text(AppStrings.noRouteTitle.tr())),
+            body: Center(child: Text(AppStrings.noRouteFound.tr())),
           ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:speak_up/manager/bottom_nav/bottom_nav_cubit.dart';
@@ -17,7 +18,7 @@ class BottomNavBar extends StatelessWidget {
     final List<Widget> screens = [
       const HomeScreen(),
       const ConversationScreen(),
-       AiChatScreen(),
+      AiChatScreen(),
       const SettingsScreen(),
     ];
 
@@ -39,10 +40,10 @@ class BottomNavBar extends StatelessWidget {
 
   List<BottomNavigationBarItem> _navBarItems() {
     return [
-      _buildNavBarItem(AppIcons.home, AppStrings.home),
-      _buildNavBarItem(AppIcons.conversations, AppStrings.conversations),
-      _buildNavBarItem(AppIcons.aiChat, AppStrings.aiChat),
-      _buildNavBarItem(AppIcons.settings, AppStrings.settings),
+      _buildNavBarItem(AppIcons.home, AppStrings.home.tr()),
+      _buildNavBarItem(AppIcons.conversations, AppStrings.conversations.tr()),
+      _buildNavBarItem(AppIcons.aiChat, AppStrings.aiChat.tr()),
+      _buildNavBarItem(AppIcons.settings, AppStrings.settings.tr()),
     ];
   }
 

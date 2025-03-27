@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:speak_up/resources/assets_manager.dart';
 import 'package:speak_up/resources/strings_manager.dart';
@@ -29,29 +30,29 @@ class ForgotPasswordScreen extends StatelessWidget {
             ),
             SizedBox(height: size.height * 0.1),
             AppText(
-              text: AppStrings.forgotPassword,
+              text: AppStrings.forgotPassword.tr(),
               fontSize: 28,
               fontWeight: FontWeight.bold,
             ),
 
             SizedBox(height: size.height * 0.01),
             AppText(
-              text: AppStrings.enterYourEmailToResetPassword,
+              text: AppStrings.enterYourEmailToResetPassword.tr(),
               color: Colors.grey,
             ),
             SizedBox(height: size.height * 0.04),
-            _buildTextField(label: AppStrings.email),
+            _buildTextField(label: AppStrings.email.tr()),
             SizedBox(height: size.height * 0.04),
             ElevatedButton(
               onPressed: () {},
-              child: const Text(AppStrings.sendResetLink),
+              child: Text(AppStrings.sendResetLink.tr()),
             ),
             SizedBox(height: size.height * 0.02),
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text(AppStrings.backToLogin),
+              child: Text(AppStrings.backToLogin.tr()),
             ),
           ],
         ),

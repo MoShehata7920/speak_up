@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
@@ -16,8 +17,8 @@ class ConversationScreen extends StatelessWidget {
       create: (context) => ConversationCubit(),
       child: Scaffold(
         appBar: AppBar(
-          title: const AppText(
-            text: AppStrings.aiConversation,
+          title: AppText(
+            text: AppStrings.aiConversation.tr(),
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
@@ -92,7 +93,7 @@ class ConversationScreen extends StatelessWidget {
             child: TextField(
               controller: messageController,
               decoration: InputDecoration(
-                hintText: AppStrings.typeAMessage,
+                hintText: AppStrings.typeAMessage.tr(),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),

@@ -15,4 +15,10 @@ class AppIcons {
   static const send = IconlyBroken.send;
   static const mic = Icons.mic;
   static const regenerate = Icons.replay;
+  static const forwardArrow = IconlyBroken.arrowRight2;
+  static const logout = IconlyBroken.logout;
+  static const language = Icons.language;
+  static const darkMode = Icons.dark_mode;
+  static const notifications = Icons.notifications;
+  static const about = Icons.info;
 }

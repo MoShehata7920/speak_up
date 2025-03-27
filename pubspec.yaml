@@ -31,6 +31,7 @@ dependencies:
   animated_text_kit: ^4.2.3
   bloc: ^9.0.0
   cupertino_icons: ^1.0.8
+  easy_localization: ^3.0.7+1
   equatable: ^2.0.7
   flutter:
     sdk: flutter
@@ -60,6 +61,7 @@ flutter:
   assets:
     - assets/images/
     - assets/json/
+    - assets/translations/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
   # For details regarding adding assets from package dependencies, see

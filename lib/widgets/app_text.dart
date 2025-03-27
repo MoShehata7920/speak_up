@@ -36,7 +36,7 @@ class AppText extends StatelessWidget {
         fontWeight: fontWeight,
         letterSpacing: letterSpacing,
         height: height ?? 0,
-        color: color ?? Colors.black,
+        color: color ?? Theme.of(context).textTheme.bodyLarge!.color,
       ),
       textAlign: textAlign,
       overflow: overflow,

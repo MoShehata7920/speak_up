@@ -1,70 +1,70 @@
 class AppStrings {
   // String keys (for reference)
-  static const String noRouteTitle = 'No Route Title';
-  static const String noRouteFound = 'No Route Found';
+  static String noRouteTitle = 'no_route_title';
+  static String noRouteFound = 'no_route_found';
 
   // Splash Screen
-  static const String developedBy = "Developed By";
-  static const String mohamedShehata = "Mohamed Shehata Torky";
-
-  // Splash Screen
-  static const String welcomeTpSpeakUp = "Welcome to Speak Up!";
+  static String welcomeTpSpeakUp = "welcome_to_speakup";
 
   // On Boarding Screen
-  static const String learnLanguagesEasy = "Learn Languages Easily";
-  static const String practiceConversations =
-      "Practice conversations with AI and improve your pronunciation.";
-  static const String aiPoweredConversations = "AI-Powered Conversations";
-  static const String engageInRealLife =
-      "Engage in real-life scenarios and enhance your fluency.";
-  static const String speakWithConfidence = "Speak with Confidence";
-  static const String getInstantFeedback =
-      "Get instant feedback and track your progress.";
-  static const String skip = "Skip";
-  static const String getStarted = "Get Started";
-  static const String next = "Next";
+  static String learnLanguagesEasy = "learn_languages_easy";
+  static String practiceConversations = "practice_conversations";
+  static String aiPoweredConversations = "ai_powered_conversations";
+  static String engageInRealLife = "engage_in_real_life";
+  static String speakWithConfidence = "speak_with_confidence";
+  static String getInstantFeedback = "get_instant_feedback";
+  static String skip = "skip";
+  static String getStarted = "get_started";
+  static String next = "next";
 
   // Auth Screens
-  static const String welcomeBack = "Welcome Back!";
-  static const String loginToContinue = "Login to continue";
-  static const String email = "Email";
-  static const String forgotPassword = "Forgot Password?";
-  static const String login = "Login";
-  static const String dontHaveAccount = "Don't have an account? ";
-  static const String signUp = "Sign Up";
-  static const String password = "Password";
-  static const String alreadyHaveAccount = "Already have An account?";
-  static const String createAccount = "Create Account";
-  static const String signUpToContinue = "sign Up To Continue";
-  static const String forgotPasswordTitle = "Forgot Password?";
-  static const String enterYourEmailToResetPassword =
-      "Please enter your email address to receive a password reset link.";
-  static const String sendResetLink = "Send Reset Link";
-  static const String backToLogin = "Back to Login";
-  static const String fullName = "Full Name";
+  static String welcomeBack = "welcome_back";
+  static String loginToContinue = "login_to_continue";
+  static String email = "email";
+  static String forgotPassword = "forgot_password";
+  static String login = "login";
+  static String dontHaveAccount = "dont_have_account";
+  static String signUp = "sign_up";
+  static String password = "password";
+  static String alreadyHaveAccount = "already_have_account";
+  static String createAccount = "create_account";
+  static String signUpToContinue = "sign_up_to_continue";
+  static String enterYourEmailToResetPassword = "enter_email_to_reset";
+  static String sendResetLink = "send_reset_link";
+  static String backToLogin = "back_to_login";
+  static String fullName = "full_name";
 
   // Nav Bar
-  static const String home = "Home";
-  static const String conversations = "Conversations";
-  static const String aiChat = "AI Chat";
-  static const String settings = "Settings";
+  static String home = "home";
+  static String conversations = "conversations";
+  static String aiChat = "ai_chat";
+  static String settings = "settings";
 
   // Home Screen
-  static const String welcome = "Welcome back,";
-  static const String talkToAI = "Talk to AI";
-  static const String improveYourSkills =
-      "Improve your skills with AI conversations.";
-  static const String startChat = "Start Chat";
-  static const String wordOfTheDay = "Word of the Day";
-  static const String conversationPractice = "Practice Conversations";
-  static const String start = "Start";
-  static const String yourProgress = "Your Progress";
-  static const String streak = "🔥 Streak:";
-  static const String days = "Days";
-  static const String completed = "Completed";
-  static const String aiConversation = "AI Conversation";
-  static const String typeAMessage = "Type a message...";
+  static String welcome = "welcome";
+  static String talkToAI = "talk_to_ai";
+  static String improveYourSkills = "improve_skills";
+  static String startChat = "start_chat";
+  static String wordOfTheDay = "word_of_day";
+  static String conversationPractice = "conversation_practice";
+  static String start = "start";
+  static String yourProgress = "your_progress";
+  static String streak = "streak";
+  static String days = "days";
+  static String completed = "completed";
+  static String aiConversation = "ai_conversation";
+  static String typeAMessage = "type_message";
 
   // Ai Chat Screen
-  static const String askAiAnything = "Ask AI anything...";
+  static String askAiAnything = "ask_ai_anything";
+
+  // Settings Screen
+  static String preferences = "preferences";
+  static String language = "language";
+  static String selectLanguage = "select_language";
+  static String darkMode = "dark_mode";
+  static String notifications = "notifications";
+  static String aboutApp = "about_app";
+  static String logout = "logout";
+  static String logoutSuccess = "logout_success";
 }

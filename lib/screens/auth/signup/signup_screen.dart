@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:speak_up/resources/assets_manager.dart';
 import 'package:speak_up/resources/strings_manager.dart';
@@ -29,29 +30,29 @@ class SignUpScreen extends StatelessWidget {
             ),
             SizedBox(height: size.height * 0.1),
             AppText(
-              text: AppStrings.createAccount,
+              text: AppStrings.createAccount.tr(),
               fontSize: 28,
               fontWeight: FontWeight.bold,
             ),
 
             SizedBox(height: size.height * 0.01),
-            AppText(text: AppStrings.signUpToContinue, color: Colors.grey),
+            AppText(text: AppStrings.signUpToContinue.tr(), color: Colors.grey),
             SizedBox(height: size.height * 0.04),
-            _buildTextField(label: AppStrings.fullName),
+            _buildTextField(label: AppStrings.fullName.tr()),
             SizedBox(height: size.height * 0.02),
-            _buildTextField(label: AppStrings.email),
+            _buildTextField(label: AppStrings.email.tr()),
             SizedBox(height: size.height * 0.02),
-            _buildTextField(label: AppStrings.password, isPassword: true),
+            _buildTextField(label: AppStrings.password.tr(), isPassword: true),
             SizedBox(height: size.height * 0.04),
             ElevatedButton(
               onPressed: () {},
-              child: const Text(AppStrings.signUp),
+              child: Text(AppStrings.signUp.tr()),
             ),
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text(AppStrings.alreadyHaveAccount),
+              child: Text(AppStrings.alreadyHaveAccount.tr()),
             ),
           ],
         ),
