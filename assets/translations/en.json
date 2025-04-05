@@ -54,5 +54,11 @@
     "notifications": "Notifications",
     "about_app": "About App",
     "logout": "Logout",
-    "logout_success": "Logged out successfully!"
+    "logout_success": "Logged out successfully!",
+    "Sign_up_successful":"Sign sign_up successful!",
+    "Please_enter_your_name" : "Please enter your name",
+    "Please_enter_your_email" : "Please enter your email",
+    "password_not_valid" : "Password must be at least 6 characters",
+    "login_successful":"Login successful!",
+    "Please_enter_your_password" : "Please enter your password"
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:speak_up/screens/settings/data/settings_repository.dart';
+import 'package:speak_up/app/repo.dart';
 import 'settings_state.dart';
 
 class SettingsCubit extends Cubit<SettingsState> {
-  final SettingsRepository repository;
+  final Repository repository;
 
   SettingsCubit(this.repository)
     : super(

@@ -32,7 +32,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (context) => const LoginScreen());
 
       case Routes.signUpRoute:
-        return MaterialPageRoute(builder: (context) => const SignUpScreen());
+        return MaterialPageRoute(builder: (context) => SignUpScreen());
 
       case Routes.forgotPasswordRoute:
         return MaterialPageRoute(

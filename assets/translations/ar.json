@@ -54,5 +54,11 @@
     "notifications": "الإشعارات",
     "about_app": "حول التطبيق",
     "logout": "تسجيل الخروج",
-    "logout_success": "تم تسجيل الخروج بنجاح!"
+    "logout_success": "تم تسجيل الخروج بنجاح!",
+    "Sign_up_successful":"تم التسجيل بنجاح!",
+    "Please_enter_your_name" : "يرجى ادخال اسمك",
+    "Please_enter_your_email" : "يرجى ادخال بريدك الالكتروني",
+    "password_not_valid" : "كلمة المرور يجب أن تكون 6 أحرف على الأقل",
+    "login_successful":"تم تسجيل الدخول بنجاح!",
+    "Please_enter_your_password" : "يرجى ادخال كلمة المرور"
 }

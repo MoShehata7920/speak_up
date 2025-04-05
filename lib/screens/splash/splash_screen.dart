@@ -4,7 +4,9 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
+import 'package:speak_up/app/repo.dart';
 import 'package:speak_up/resources/routes_manager.dart';
 import 'package:speak_up/resources/strings_manager.dart';
 
@@ -51,9 +53,23 @@ class SplashScreenState extends State<SplashScreen> {
 
   void navigateToMain() async {
     final prefs = await SharedPreferences.getInstance();
+    final repository = Repository();
     bool onboardingSeen = prefs.getBool('onboarding_seen') ?? false;
-    String nextRoute =
-        onboardingSeen ? Routes.navBarRoute : Routes.onBoardingRoute;
+    bool isAuthenticated = await repository.getAuthenticationStatus();
+
+    final user = Supabase.instance.client.auth.currentUser;
+
+    String nextRoute;
+
+    if (onboardingSeen) {
+      if (user != null && isAuthenticated) {
+        nextRoute = Routes.navBarRoute;
+      } else {
+        nextRoute = Routes.logInRoute;
+      }
+    } else {
+      nextRoute = Routes.onBoardingRoute;
+    }
 
     Future.delayed(const Duration(seconds: 3), () {
       if (!mounted) return;

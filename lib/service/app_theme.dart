@@ -32,6 +32,5 @@ class AppTheme {
         fontWeight: FontWeight.bold,
       ),
     ),
-    // Customize additional components (e.g., button themes) as needed.
   );
 }

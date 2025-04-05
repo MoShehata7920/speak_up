@@ -33,6 +33,12 @@ class AppStrings {
   static String sendResetLink = "send_reset_link";
   static String backToLogin = "back_to_login";
   static String fullName = "full_name";
+  static String signUpSuccess = "Sign_up_successful";
+  static String pleasEnterYourName = "Please_enter_your_name";
+  static String pleasEnterYourEmail = "Please_enter_your_email";
+  static String passwordNotValid = "password_not_valid";
+  static String loginSuccessful = "login_successful";
+  static String pleaseEnterYourPassword = "Please_enter_your_password";
 
   // Nav Bar
   static String home = "home";

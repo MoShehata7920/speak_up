@@ -4,6 +4,7 @@ const String jsonPath = "assets/json";
 class AppImages {
   static const String appLogo = "$imagesPath/app_logo.png";
   static const String myPic = "$imagesPath/photo_2025-02-20_02-16-22.jpg";
+  static const String profilePlaceholder = "$imagesPath/profilePlaceholder.jpg";
 }
 
 class AppJson {
