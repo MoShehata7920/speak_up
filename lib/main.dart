@@ -7,7 +7,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'package:speak_up/core/repo.dart';
 import 'package:speak_up/features/ai_chat/presentation/cubit/ai_chat_cubit.dart';
-import 'package:speak_up/features/auth/cubit/auth_cubit.dart';
+import 'package:speak_up/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:speak_up/features/main/presentation/cubit/bottom_nav_cubit.dart';
 import 'package:speak_up/features/conversation/presentation/cubit/conversation_cubit.dart';
 import 'package:speak_up/features/on_boarding/presentation/cubit/on_boarding_cubit.dart';

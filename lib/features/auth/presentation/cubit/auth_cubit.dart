@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:speak_up/core/repo.dart';
-import 'package:speak_up/features/auth/cubit/auth_state.dart';
+import 'package:speak_up/features/auth/presentation/cubit/auth_state.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' as supabase;
 
 class AuthCubit extends Cubit<AuthState> {
