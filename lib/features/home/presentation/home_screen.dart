@@ -1,12 +1,18 @@
+import 'dart:convert';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-import 'package:speak_up/core/app_text.dart';
-import 'package:speak_up/core/assets_manager.dart';
-import 'package:speak_up/core/icons_manager.dart';
-import 'package:speak_up/core/strings_manager.dart';
-import 'package:speak_up/core/utils.dart';
+import 'package:speak_up/core/widgets/app_text.dart';
+import 'package:speak_up/core/resources/assets_manager.dart';
+import 'package:speak_up/core/resources/icons_manager.dart';
+import 'package:speak_up/core/resources/strings_manager.dart';
+import 'package:speak_up/core/resources/utils.dart';
+import 'package:speak_up/features/home/presentation/cubit/home_cubit.dart';
+import 'package:speak_up/features/home/presentation/cubit/home_state.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,40 +21,56 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = Utils(context).screenSize;
 
-    return Scaffold(
-      appBar: AppBar(
-        title: AppText(
-          text: "${AppStrings.welcome.tr()} Torky!",
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Container(
-              width: size.width * 0.12,
-              height: size.width * 0.12,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage(AppImages.myPic),
-                  fit: BoxFit.fill,
-                ),
+    return BlocProvider(
+      create: (context) => HomeCubit(Supabase.instance.client),
+      child: Scaffold(
+        appBar: AppBar(
+          title: BlocBuilder<HomeCubit, HomeState>(
+            builder: (context, state) {
+              return AppText(
+                text: "${AppStrings.welcome.tr()} ${state.fullName ?? 'User'}!",
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              );
+            },
+          ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: BlocBuilder<HomeCubit, HomeState>(
+                builder: (context, state) {
+                  return Container(
+                    width: size.width * 0.12,
+                    height: size.width * 0.12,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image:
+                            state.profileImage != null &&
+                                    state.profileImage!.isNotEmpty
+                                ? MemoryImage(base64Decode(state.profileImage!))
+                                : AssetImage(AppImages.profilePlaceholder)
+                                    as ImageProvider,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
-          ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _buildAIChatCard(size),
-            _buildDailyLearningCard(),
-            _buildConversationPracticeCard(),
-            _buildProgressTrackerCard(size),
           ],
+        ),
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              _buildAIChatCard(size),
+              _buildDailyLearningCard(),
+              _buildConversationPracticeCard(),
+              _buildProgressTrackerCard(size),
+            ],
+          ),
         ),
       ),
     );

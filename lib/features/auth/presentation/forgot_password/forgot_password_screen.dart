@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import 'package:speak_up/core/app_text.dart';
-import 'package:speak_up/core/assets_manager.dart';
-import 'package:speak_up/core/strings_manager.dart';
-import 'package:speak_up/core/utils.dart';
+import 'package:speak_up/core/widgets/app_text.dart';
+import 'package:speak_up/core/resources/assets_manager.dart';
+import 'package:speak_up/core/resources/strings_manager.dart';
+import 'package:speak_up/core/resources/utils.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});

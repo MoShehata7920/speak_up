@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-import 'package:speak_up/core/repo.dart';
-import 'package:speak_up/core/routes_manager.dart';
-import 'package:speak_up/core/strings_manager.dart';
+import 'package:speak_up/core/data/repo.dart';
+import 'package:speak_up/core/resources/routes_manager.dart';
+import 'package:speak_up/core/resources/strings_manager.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

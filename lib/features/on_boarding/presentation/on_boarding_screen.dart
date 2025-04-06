@@ -4,11 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:speak_up/features/on_boarding/presentation/cubit/on_boarding_cubit.dart';
-import 'package:speak_up/core/assets_manager.dart';
-import 'package:speak_up/core/routes_manager.dart';
-import 'package:speak_up/core/strings_manager.dart';
+import 'package:speak_up/core/resources/assets_manager.dart';
+import 'package:speak_up/core/resources/routes_manager.dart';
+import 'package:speak_up/core/resources/strings_manager.dart';
 import 'package:speak_up/features/on_boarding/presentation/on_boarding_page.dart';
-import 'package:speak_up/core/utils.dart';
+import 'package:speak_up/core/resources/utils.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});

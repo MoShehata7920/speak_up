@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 import 'package:speak_up/features/conversation/presentation/cubit/conversation_cubit.dart';
-import 'package:speak_up/core/assets_manager.dart';
-import 'package:speak_up/core/icons_manager.dart';
-import 'package:speak_up/core/strings_manager.dart';
-import 'package:speak_up/core/app_text.dart';
+import 'package:speak_up/core/resources/assets_manager.dart';
+import 'package:speak_up/core/resources/icons_manager.dart';
+import 'package:speak_up/core/resources/strings_manager.dart';
+import 'package:speak_up/core/widgets/app_text.dart';
 
 class ConversationScreen extends StatelessWidget {
   const ConversationScreen({super.key});

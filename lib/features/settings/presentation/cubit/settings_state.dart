@@ -1,6 +1,7 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-class SettingsState {
+class SettingsState extends Equatable {
   final bool isDarkMode;
   final bool notificationsEnabled;
   final Locale currentLocale;
@@ -30,4 +31,13 @@ class SettingsState {
       profileImage: profileImage ?? this.profileImage,
     );
   }
+
+  @override
+  List<Object?> get props => [
+    isDarkMode,
+    notificationsEnabled,
+    currentLocale,
+    fullName,
+    profileImage,
+  ];
 }

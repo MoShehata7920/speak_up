@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 
-import 'package:speak_up/core/app_text.dart';
-import 'package:speak_up/core/assets_manager.dart';
-import 'package:speak_up/core/strings_manager.dart';
-import 'package:speak_up/core/utils.dart';
+import 'package:speak_up/core/widgets/app_text.dart';
+import 'package:speak_up/core/resources/assets_manager.dart';
+import 'package:speak_up/core/resources/strings_manager.dart';
+import 'package:speak_up/core/resources/utils.dart';
 import 'package:speak_up/features/settings/presentation/cubit/settings_cubit.dart';
 import 'package:speak_up/features/settings/presentation/cubit/settings_state.dart';
 

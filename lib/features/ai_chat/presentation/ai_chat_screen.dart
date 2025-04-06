@@ -6,10 +6,10 @@ import 'package:lottie/lottie.dart';
 import 'package:speak_up/features/ai_chat/presentation/cubit/ai_chat_cubit.dart';
 import 'package:speak_up/features/ai_chat/presentation/cubit/ai_chat_state.dart';
 import 'package:speak_up/features/ai_chat/data/chat_message_model.dart';
-import 'package:speak_up/core/assets_manager.dart';
-import 'package:speak_up/core/icons_manager.dart';
-import 'package:speak_up/core/strings_manager.dart';
-import 'package:speak_up/core/app_text.dart';
+import 'package:speak_up/core/resources/assets_manager.dart';
+import 'package:speak_up/core/resources/icons_manager.dart';
+import 'package:speak_up/core/resources/strings_manager.dart';
+import 'package:speak_up/core/widgets/app_text.dart';
 
 class AiChatScreen extends StatelessWidget {
   AiChatScreen({super.key});

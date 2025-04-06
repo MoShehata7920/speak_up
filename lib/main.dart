@@ -3,11 +3,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:speak_up/features/home/presentation/cubit/home_cubit.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'package:speak_up/core/constants.dart';
-import 'package:speak_up/core/repo.dart';
-import 'package:speak_up/core/routes_manager.dart';
+import 'package:speak_up/core/data/repo.dart';
+import 'package:speak_up/core/resources/routes_manager.dart';
 import 'package:speak_up/features/ai_chat/presentation/cubit/ai_chat_cubit.dart';
 import 'package:speak_up/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:speak_up/features/conversation/presentation/cubit/conversation_cubit.dart';
@@ -55,6 +56,7 @@ void main() async {
           BlocProvider(
             create: (_) => AuthCubit(Supabase.instance.client, Repository()),
           ),
+          BlocProvider(create: (_) => HomeCubit(Supabase.instance.client)),
         ],
         child: const MyApp(),
       ),

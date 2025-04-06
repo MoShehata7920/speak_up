@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:speak_up/core/utils.dart';
-import 'package:speak_up/core/app_text.dart';
+import 'package:speak_up/core/resources/utils.dart';
+import 'package:speak_up/core/widgets/app_text.dart';
 
 class OnboardingPage extends StatelessWidget {
   final String animation;

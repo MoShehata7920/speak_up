@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:speak_up/core/strings_manager.dart';
+import 'package:speak_up/core/resources/strings_manager.dart';
 import 'package:speak_up/features/auth/presentation/forgot_password/forgot_password_screen.dart';
 import 'package:speak_up/features/auth/presentation/login/login_screen.dart';
 import 'package:speak_up/features/auth/presentation/signup/signup_screen.dart';
