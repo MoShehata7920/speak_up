@@ -60,5 +60,10 @@
     "Please_enter_your_email" : "Please enter your email",
     "password_not_valid" : "Password must be at least 6 characters",
     "login_successful":"Login successful!",
-    "Please_enter_your_password" : "Please enter your password"
+    "Please_enter_your_password" : "Please enter your password",
+    "profile_updated":"Profile updated",
+    "edit_Profile":"Edit Profile",
+    "tap_to_change_photo":"Tap to change photo",
+    "save": "Save",
+    "loading" :"Loading..."
 }

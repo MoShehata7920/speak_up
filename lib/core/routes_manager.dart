@@ -6,6 +6,7 @@ import 'package:speak_up/features/auth/presentation/login/login_screen.dart';
 import 'package:speak_up/features/auth/presentation/signup/signup_screen.dart';
 import 'package:speak_up/features/main/presentation/nav_bar.dart';
 import 'package:speak_up/features/on_boarding/presentation/on_boarding_screen.dart';
+import 'package:speak_up/features/settings/presentation/edit_profile_screen.dart';
 import 'package:speak_up/features/splash/presentation/splash_screen.dart';
 
 class Routes {
@@ -15,6 +16,7 @@ class Routes {
   static const String signUpRoute = '/signUpRoute';
   static const String forgotPasswordRoute = '/forgotPasswordRoute';
   static const String navBarRoute = '/navBarRoute';
+  static const String editProfileRoute = '/editProfileRoute';
 }
 
 class RouteGenerator {
@@ -41,6 +43,11 @@ class RouteGenerator {
 
       case Routes.navBarRoute:
         return MaterialPageRoute(builder: (context) => const BottomNavBar());
+
+      case Routes.editProfileRoute:
+        return MaterialPageRoute(
+          builder: (context) => const EditProfileScreen(),
+        );
 
       default:
         return unDefinedRoute();

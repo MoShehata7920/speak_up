@@ -1,17 +1,19 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+
+import 'package:speak_up/core/app_text.dart';
 import 'package:speak_up/core/assets_manager.dart';
 import 'package:speak_up/core/icons_manager.dart';
 import 'package:speak_up/core/strings_manager.dart';
-import 'package:speak_up/core/app_text.dart';
+import 'package:speak_up/core/utils.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Size size = Utils(context).screenSize;
 
     return Scaffold(
       appBar: AppBar(

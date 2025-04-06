@@ -1,15 +1,17 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+
+import 'package:speak_up/core/app_text.dart';
 import 'package:speak_up/core/assets_manager.dart';
 import 'package:speak_up/core/strings_manager.dart';
-import 'package:speak_up/core/app_text.dart';
+import 'package:speak_up/core/utils.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Size size = Utils(context).screenSize;
 
     return Scaffold(
       body: SingleChildScrollView(

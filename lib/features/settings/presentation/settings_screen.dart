@@ -1,23 +1,28 @@
+import 'dart:convert';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:speak_up/features/auth/presentation/cubit/auth_cubit.dart';
-import 'package:speak_up/features/auth/presentation/cubit/auth_state.dart';
-import 'package:speak_up/features/settings/presentation/cubit/settings_cubit.dart';
-import 'package:speak_up/features/settings/presentation/cubit/settings_state.dart';
+import 'package:supabase_flutter/supabase_flutter.dart' as supabase;
+
+import 'package:speak_up/core/app_text.dart';
 import 'package:speak_up/core/assets_manager.dart';
 import 'package:speak_up/core/constants.dart';
 import 'package:speak_up/core/icons_manager.dart';
 import 'package:speak_up/core/routes_manager.dart';
 import 'package:speak_up/core/strings_manager.dart';
-import 'package:speak_up/core/app_text.dart';
+import 'package:speak_up/core/utils.dart';
+import 'package:speak_up/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:speak_up/features/auth/presentation/cubit/auth_state.dart';
+import 'package:speak_up/features/settings/presentation/cubit/settings_cubit.dart';
+import 'package:speak_up/features/settings/presentation/cubit/settings_state.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Size size = Utils(context).screenSize;
 
     return Scaffold(
       appBar: AppBar(
@@ -52,7 +57,7 @@ class SettingsScreen extends StatelessWidget {
             return ListView(
               padding: const EdgeInsets.all(16),
               children: [
-                _buildProfileSection(size),
+                _buildProfileSection(size, context, state),
                 SizedBox(height: size.height * 0.02),
                 AppText(
                   text: AppStrings.preferences.tr(),
@@ -73,29 +78,51 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildProfileSection(Size size) {
-    return Row(
-      children: [
-        Container(
-          width: size.width * 0.12,
-          height: size.width * 0.12,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            image: DecorationImage(
-              image: AssetImage(AppImages.myPic),
-              fit: BoxFit.fill,
+  Widget _buildProfileSection(
+    Size size,
+    BuildContext context,
+    SettingsState state,
+  ) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, Routes.editProfileRoute);
+      },
+      child: Row(
+        children: [
+          Container(
+            width: size.width * 0.12,
+            height: size.width * 0.12,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                image:
+                    state.profileImage != null && state.profileImage!.isNotEmpty
+                        ? MemoryImage(base64Decode(state.profileImage!))
+                        : AssetImage(AppImages.profilePlaceholder)
+                            as ImageProvider,
+                fit: BoxFit.fill,
+              ),
             ),
           ),
-        ),
-        const SizedBox(width: 12),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            AppText(text: "Torky", fontSize: 16, fontWeight: FontWeight.bold),
-            AppText(text: "mshehata065@gmail.com", fontSize: 14),
-          ],
-        ),
-      ],
+          SizedBox(width: size.width * 0.04),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              AppText(
+                text: state.fullName ?? AppStrings.loading.tr(),
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+              AppText(
+                text:
+                    supabase.Supabase.instance.client.auth.currentUser?.email ??
+                    AppStrings.loading.tr(),
+                fontSize: 14,
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 

@@ -60,5 +60,10 @@
     "Please_enter_your_email" : "يرجى ادخال بريدك الالكتروني",
     "password_not_valid" : "كلمة المرور يجب أن تكون 6 أحرف على الأقل",
     "login_successful":"تم تسجيل الدخول بنجاح!",
-    "Please_enter_your_password" : "يرجى ادخال كلمة المرور"
+    "Please_enter_your_password" : "يرجى ادخال كلمة المرور",
+    "profile_updated" : "تم تحديث الملف الشخصي بنجاح!",
+    "edit_Profile" : "تحديث الملف الشخصي",
+    "tap_to_change_photo" : "انقر لتغيير الصورة",
+    "save" : "حفظ",
+    "loading" : "جاري التحميل..."
 }

@@ -73,4 +73,11 @@ class AppStrings {
   static String aboutApp = "about_app";
   static String logout = "logout";
   static String logoutSuccess = "logout_success";
+  static String loading = "loading";
+
+  // Edit profile screen
+  static String profileUpdated = "profile_updated";
+  static String editProfile = "edit_Profile";
+  static String tapToChangePhoto = "tap_to_change_photo";
+  static String save = "save";
 }
